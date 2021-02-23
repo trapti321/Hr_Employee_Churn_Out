@@ -1,0 +1,120 @@
+
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Sticky Footer Template · Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sticky-footer/">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      /* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+}
+
+.footer {
+  background-color: #f5f5f5;
+}
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="sticky-footer.css" rel="stylesheet">
+  </head>
+  <body class="d-flex flex-column h-100" style="background-image: url(https://employee-performance.com/blog/wp-content/uploads/Role-HR-Employee-Evaluations.jpeg);
+  background-position: center;background-size: cover">
+    <!-- Begin page content -->
+<main role="main" class="flex-shrink-0">
+  <div class="container">
+      <center><h1><u>HR Employee Churn Out</u></h1></center>
+
+      <form action="/predict" method="POST">
+  <div class="form-group">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="satisfaction_level" placeholder="satisfaction_level in %">
+  </div>
+           <div class="form-group">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="last_evaluation" placeholder="last_evaluation in %">
+  </div>
+           <div class="form-group">
+    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="number_project" placeholder="number_project">
+  </div>
+           <div class="form-group">
+    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="average_montly_hours" placeholder="average_montly_hours">
+  </div>
+           <div class="form-group">
+    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="time_spend_company" placeholder="time_spend_company">
+  </div>
+           <div class="form-group">
+    <select class="form-control" id="exampleFormControlSelect1" name="Work_accident">
+        <option>Work_accident</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+           <div class="form-group">
+    <select class="form-control" id="exampleFormControlSelect1" name="promotion_last_5years">
+        <option>promotion_last_5years</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+          <div class="form-group">
+    <select class="form-control" id="exampleFormControlSelect1" name="salary">
+        <option>Salary</option>
+      <option>low</option>
+      <option>Medium</option>
+      <option>High</option>
+    </select>
+  </div>
+
+          <input type="submit" class="btn btn-success" value="Predict">
+
+      </form>
+
+      <div class="results">
+			{% if prediction==1 %}
+				<h2 style="color: red; margin-top: 40px;font-weight: bold;background-color: black;padding: 5px">Oops ! Your Employee will left</h2>
+
+			{% elif prediction==0 %}
+				<h2  <h2 style="color: red; margin-top: 40px;font-weight: bold;background-color: black;padding: 5px">Woow Your Employee will not Left </h2>
+
+			{% endif %}
+
+          {{ data }}
+		</div>
+
+  </div>
+</main>
+
+
+</body>
+</html>
